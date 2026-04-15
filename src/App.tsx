@@ -8,6 +8,8 @@ import configData from './data/site-config.json';
 // @REPLACE_IMPORT_FOOTER
 
 export default function App() {
+  console.log(configData);
+  
   return (
     <div className="w-full max-w-[1300px] mx-auto">
       {/* @REPLACE_COMPONENT_HERO */}
