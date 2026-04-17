@@ -17,11 +17,10 @@ export default function App() {
       {/* @REPLACE_COMPONENT_FEATURE */}
       
       {/* @REPLACE_COMPONENT_GALLERY */}
-      
+
       {/* @REPLACE_COMPONENT_CTA */}
-      
+
       {/* @REPLACE_COMPONENT_FOOTER */}
-      
     </div>
   );
 }

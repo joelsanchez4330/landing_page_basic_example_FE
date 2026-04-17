@@ -13,15 +13,15 @@ interface FeaturesProps {
         items: Array<{
           title: string;
           desc: string;
-          image?: string; // Standardized (replaces 'img' or 'imageUrl')
+          image?: string;
           icon?: string;
           tag?: string;
-          highlight?: string; // Standardized from row.highlight
-          list?: string[];    // Standardized from row.list
+          highlight?: string;
+          list?: string[];
           cta?: string;
           imageUrl?: string;
-          dark?: boolean; // Specific to Features04
-          step?: string; // Specific to Features04
+          dark?: boolean;
+          step?: string;
         }>;
       };
     };
@@ -30,21 +30,26 @@ interface FeaturesProps {
 
 const Features01: React.FC<FeaturesProps> = ({ config }) => {
   const { theme, siteConfig } = config;
-  const features = siteConfig?.features;
+  
+  // FIX 1: Add fallback for features object
+  const features = siteConfig?.features || { topTitle: '', mainTitle: '', items: [] };
 
   // Helper to render the correct SVG based on the icon name in JSON
-  const renderIcon = (iconName: string) => {
-    // 1. Look up the icon in the library
+  const renderIcon = (iconName?: string) => {
+    // FIX 2: Check if iconName exists, otherwise return fallback
+    if (!iconName) return <LucideIcons.HelpCircle size={24} />;
+
     const IconComponent = (LucideIcons as any)[iconName];
   
-    // 2. If it exists, return the component. If not, return a default.
     if (IconComponent) {
       return <IconComponent size={24} color={theme.primaryColor} />;
     }
     
-    // Optional: Fallback icon so the box isn't empty
     return <LucideIcons.HelpCircle size={24} />;
   };
+
+  // FIX 3: If no features are provided at all, don't crash
+  if (!siteConfig?.features) return null;
 
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
@@ -65,21 +70,15 @@ const Features01: React.FC<FeaturesProps> = ({ config }) => {
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.items.map((item, idx) => (
+          {/* FIX 4: Add safety check on items array */}
+          {(features.items || []).map((item, idx) => (
             <div 
               key={idx}
               style={{ borderRadius: theme.borderRadius }}
               className="group p-8 border border-gray-100 bg-gray-50/50 hover:bg-white hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-300"
             >
-              {/* Icon Container with dynamic hover background */}
               <div 
-                style={{ 
-                   /* We use CSS variables or inline logic for the hover color 
-                      But a clean way is just using the group-hover utility 
-                      If the primaryColor changes, we can use an inline style for the 'normal' state 
-                   */
-                   borderRadius: '12px' 
-                }}
+                style={{ borderRadius: '12px' }}
                 className="w-12 h-12 bg-orange-100 flex items-center justify-center mb-6 group-hover:bg-orange-500 transition-colors"
               >
                 <div className="text-orange-600 group-hover:text-white transition-colors duration-300">
@@ -98,9 +97,6 @@ const Features01: React.FC<FeaturesProps> = ({ config }) => {
         </div>
       </div>
 
-      {/* Adding a small Global CSS for the Hover Glow 
-          Since standard Tailwind doesn't support dynamic hover colors in hex 
-      */}
       <style>{`
         .group:hover {
           box-shadow: 0 25px 50px -12px ${theme.primaryColor}20 !important;
