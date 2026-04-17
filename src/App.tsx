@@ -1,26 +1,22 @@
 import configData from './data/site-config.json';
+import Hero_01 from './components/Hero/hero_01';
+import Feature_01 from './components/Features/feature_01';
+import Gallery_01 from './components/Gallery/gallery_01';
+import Cta_01 from './components/CTA/cta_01';
+import Footer_01 from './components/Footer/footer_01';
 
-// --- AUTO_IMPORT_MARKER ---
-// @REPLACE_IMPORT_HERO
-// @REPLACE_IMPORT_FEATURE
-// @REPLACE_IMPORT_GALLERY
-// @REPLACE_IMPORT_CTA
-// @REPLACE_IMPORT_FOOTER
 
 export default function App() {
   console.log(configData);
   
   return (
     <div className="w-full max-w-[1300px] mx-auto">
-      {/* @REPLACE_COMPONENT_HERO */}
-      
-      {/* @REPLACE_COMPONENT_FEATURE */}
-      
-      {/* @REPLACE_COMPONENT_GALLERY */}
+      <Hero_01 config={configData} />
+      <Feature_01 config={configData} />
+      <Gallery_01 config={configData} />
+      <Cta_01 config={configData} />
+      <Footer_01 config={configData} />
 
-      {/* @REPLACE_COMPONENT_CTA */}
-
-      {/* @REPLACE_COMPONENT_FOOTER */}
     </div>
   );
 }
