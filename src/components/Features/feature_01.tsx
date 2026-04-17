@@ -7,8 +7,8 @@ interface FeaturesProps {
     siteConfig: {
       features: {
         tag?: string;
-        topTitle: string;
-        mainTitle: string;
+        topTitle?: string;
+        mainTitle?: string;
         highlightWord?: string;
         items: Array<{
           title: string;

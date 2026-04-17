@@ -7,8 +7,8 @@ interface HeroProps {
     siteConfig: {
       hero: {
         title: string;
-        highlightWord: string;
-        subtitle: string;
+        highlightWord?: string;
+        subtitle?: string;
         cta01Text: string;
         cta02Text: string;
         imageUrl?: string;
