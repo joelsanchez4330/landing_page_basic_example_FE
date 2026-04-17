@@ -38,7 +38,7 @@ const Hero_03: React.FC<HeroProps> = ({ config }) => {
   const title = hero?.title ?? "";
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
 
   const nextSlide = () => {
     if (gallery.length === 0) return;
