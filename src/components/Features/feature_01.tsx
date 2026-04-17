@@ -28,7 +28,7 @@ interface FeaturesProps {
   };
 }
 
-const Features01: React.FC<FeaturesProps> = ({ config }) => {
+const features_01: React.FC<FeaturesProps> = ({ config }) => {
   const { theme, siteConfig } = config;
   
   // FIX 1: Add fallback for features object
@@ -109,4 +109,4 @@ const Features01: React.FC<FeaturesProps> = ({ config }) => {
   );
 };
 
-export default Features01;
+export default features_01;

@@ -27,7 +27,7 @@ interface FeaturesProps {
   };
 }
 
-const Features04: React.FC<FeaturesProps> = ({ config }) => {
+const features_04: React.FC<FeaturesProps> = ({ config }) => {
   // 1. Point to the Universal Data Path
   const { theme, siteConfig } = config;
   const { features } = siteConfig;
@@ -124,4 +124,4 @@ const Features04: React.FC<FeaturesProps> = ({ config }) => {
   );
 };
 
-export default Features04;
+export default features_04;

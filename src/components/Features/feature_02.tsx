@@ -27,7 +27,7 @@ interface FeaturesProps {
   };
 }
 
-const Features02: React.FC<FeaturesProps> = ({ config }) => {
+const features_02: React.FC<FeaturesProps> = ({ config }) => {
   const { theme, siteConfig } = config;
   
   // FIX: Safety check for features and items
@@ -122,4 +122,4 @@ const Features02: React.FC<FeaturesProps> = ({ config }) => {
   );
 };
 
-export default Features02;
+export default features_02;

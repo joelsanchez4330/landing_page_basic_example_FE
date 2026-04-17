@@ -19,7 +19,7 @@ interface HeroProps {
   };
 }
 
-const Hero03: React.FC<HeroProps> = ({ config }) => {
+const hero_03: React.FC<HeroProps> = ({ config }) => {
   const { theme, siteConfig } = config;
   const hero = siteConfig?.hero;
   
@@ -156,4 +156,4 @@ const Hero03: React.FC<HeroProps> = ({ config }) => {
   );
 };
 
-export default Hero03;
+export default hero_03;

@@ -21,7 +21,7 @@ interface GalleryProps {
   };
 }
 
-const Gallery01: React.FC<GalleryProps> = ({ config }) => {
+const gallery_01: React.FC<GalleryProps> = ({ config }) => {
   const { theme, siteConfig } = config;
   const data = siteConfig.gallery;
 
@@ -88,4 +88,4 @@ const Gallery01: React.FC<GalleryProps> = ({ config }) => {
   );
 };
 
-export default Gallery01;
+export default gallery_01;

@@ -27,7 +27,7 @@ interface FeaturesProps {
   };
 }
 
-const Features05: React.FC<FeaturesProps> = ({ config }) => {
+const features_05: React.FC<FeaturesProps> = ({ config }) => {
   const { theme, siteConfig } = config;
   const { features } = siteConfig;
   const { items } = features;
@@ -105,4 +105,4 @@ const Features05: React.FC<FeaturesProps> = ({ config }) => {
   );
 };
 
-export default Features05;
+export default features_05;

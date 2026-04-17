@@ -19,7 +19,7 @@ interface GalleryProps {
   };
 }
 
-const Gallery04: React.FC<GalleryProps> = ({ config }) => {
+const gallery_04: React.FC<GalleryProps> = ({ config }) => {
   // Grab standard keys from the Universal Envelope
   const { theme, siteConfig } = config;
   const { gallery: data } = siteConfig; 
@@ -99,4 +99,4 @@ const Gallery04: React.FC<GalleryProps> = ({ config }) => {
   );
 };
 
-export default Gallery04;
+export default gallery_04;

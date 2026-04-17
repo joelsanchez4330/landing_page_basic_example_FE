@@ -32,7 +32,7 @@ interface FooterProps {
   };
 }
 
-const Footer03: React.FC<FooterProps> = ({ config }) => {
+const footer_02: React.FC<FooterProps> = ({ config }) => {
 // 2. UNIVERSAL DESTRUCTURING
 const { theme, siteConfig } = config;
 const data = siteConfig.footer; // Mapping 'footer' to 'data' for the JSX below
@@ -105,4 +105,4 @@ return (
 );
 };
 
-export default Footer03;
+export default footer_02;

@@ -31,7 +31,7 @@ interface CTAProps {
   };
 }
 
-const Cta02: React.FC<CTAProps> = ({ config }) => {
+const cta_02: React.FC<CTAProps> = ({ config }) => {
   // UNIVERSAL MAPPING
   const { theme, siteConfig } = config;
   const { cta: data } = siteConfig; 
@@ -103,4 +103,4 @@ const Cta02: React.FC<CTAProps> = ({ config }) => {
   );
 };
 
-export default Cta02;
+export default cta_02;

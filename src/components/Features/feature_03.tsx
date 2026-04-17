@@ -27,7 +27,7 @@ interface FeaturesProps {
   };
 }
 
-const Features03: React.FC<FeaturesProps> = ({ config }) => {
+const features_03: React.FC<FeaturesProps> = ({ config }) => {
   const { theme, siteConfig } = config;
   const { features } = siteConfig;
   const { items } = features; // We treat Bento boxes as 'items'
@@ -130,4 +130,4 @@ const Features03: React.FC<FeaturesProps> = ({ config }) => {
   );
 };
 
-export default Features03;
+export default features_03;

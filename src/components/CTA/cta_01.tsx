@@ -31,7 +31,7 @@ interface CTAProps {
   };
 }
 
-const CTA01: React.FC<CTAProps> = ({ config }) => {
+const cta_01: React.FC<CTAProps> = ({ config }) => {
   // 2. STANDARD DESTRUCTURING
   const { theme, siteConfig } = config;
   const { cta } = siteConfig; // Look inside siteConfig
@@ -116,4 +116,4 @@ const CTA01: React.FC<CTAProps> = ({ config }) => {
   );
 };
 
-export default CTA01;
+export default cta_01;
