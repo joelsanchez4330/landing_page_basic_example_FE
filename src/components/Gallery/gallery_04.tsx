@@ -8,7 +8,8 @@ interface GalleryProps {
         tag?: string;
         title?: string;
         highlight?: string;
-        hint?: string; // Standardized hint        categories?: string[];
+        hint?: string; // Standardized hint
+        categories?: string[];
         items: Array<{ 
           url: string; 
           aspect?: string; 

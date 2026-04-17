@@ -9,11 +9,11 @@ interface HeroProps {
         title: string;
         highlightWord?: string;
         subtitle?: string;
-        cta01Text: string;
-        cta02Text: string;
+        cta01Text?: string;
+        cta02Text?: string;
         imageUrl?: string;
         gallery: string[]; // This is the optional part causing the error
-        sizes?: { titleFont: string; subtitleFont: string; buttonPadding: string; buttonFontSize: string; imageHeight: string; imageMaxWidth: string; };
+        sizes?: { titleFont?: string; subtitleFont?: string; buttonPadding?: string; buttonFontSize?: string; imageHeight?: string; imageMaxWidth?: string; };
       };
     };
   };

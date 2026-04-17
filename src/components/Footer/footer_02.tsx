@@ -11,14 +11,14 @@ interface FooterProps {
     siteConfig: {
       footer: {
         // Shared fields
-        socials?: Array<{ label: string; url: string }>;
+        socials?: Array<{ label?: string; url?: string }>;
         
         // Footer 01 Specific (Optional)
         companyDesc?: string;
         ghostText?: string;
         columns?: Array<{
-          title: string;
-          links: Array<{ label: string; url: string; italic?: boolean }>;
+          title?: string;
+          links: Array<{ label?: string; url?: string; italic?: boolean }>;
         }>;
 
         // Footer 02 Specific (Optional)
