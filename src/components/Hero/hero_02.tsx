@@ -2,34 +2,28 @@ import React, { useState } from 'react';
 
 interface HeroProps {
   config: {
-    theme: {
-      primaryColor: string;
-      secondaryColor: string;
-      fontFamily: string;
-      borderRadius: string;
-    };
-    hero: {
-      title: string;
-      highlightWord: string;
-      subtitle: string;
-      cta01Text: string;
-      cta02Text: string;
-      imageUrl: string;
-      sizes: {
-        titleFont: string;
-        subtitleFont: string;
-        buttonPadding: string;
-        buttonFontSize: string;
-        imageHeight: string;
-        imageMaxWidth: string;
+    theme: { primaryColor: string; secondaryColor: string; fontFamily: string; borderRadius: string; };
+    company: { name: string; logoUrl: string; };
+    siteConfig: {
+      hero: {
+        title: string;
+        highlightWord: string;
+        subtitle: string;
+        cta01Text: string;
+        cta02Text: string;
+        imageUrl?: string; // Standardized
+        gallery?: string[]; // For Hero 03
+        sizes: { titleFont: string; subtitleFont: string; buttonPadding: string; buttonFontSize: string; imageHeight: string; imageMaxWidth: string; };
       };
     };
   };
 }
 
 const Hero02: React.FC<HeroProps> = ({ config }) => {
-  const { theme, hero } = config;
-  const { sizes } = hero;
+  const { theme, siteConfig } = config;
+  const hero = siteConfig?.hero;
+  const sizes = hero?.sizes;
+  if (!hero || !sizes) return null;
 
   const [isHovered, setIsHovered] = useState(false);
 

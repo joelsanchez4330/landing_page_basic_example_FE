@@ -2,45 +2,59 @@ import React, { useState } from 'react';
 
 interface CTAProps {
   config: {
-    theme: {
-      primaryColor: string;
-      secondaryColor: string;
+    theme: { 
+      primaryColor: string; 
+      secondaryColor: string; 
       borderRadius: string;
+      fontFamily?: string; 
     };
-    cta: {
-      topTitle: string;
-      mainTitle: string;
-      highlight: string;
-      subtitle: string;
-      primaryBtn: string;
-      secondaryBtn: string;
+    siteConfig: {
+      cta: {
+        // --- Shared / Standard CTA 01 Fields ---
+        topTitle?: string;
+        mainTitle?: string;
+        highlight?: string;
+        subtitle?: string;
+        primaryBtn?: string;
+        secondaryBtn?: string;
+
+        // --- CTA 02 Specific Fields ---
+        tag?: string;
+        line1?: string;
+        line1Highlight?: string;
+        line2?: string;
+        line2Highlight?: string;
+        buttonText?: string;
+        socials?: Array<{ label: string; url: string }>;
+      };
     };
   };
 }
 
 const CTA01: React.FC<CTAProps> = ({ config }) => {
-  const { theme, cta } = config;
+  // 2. STANDARD DESTRUCTURING
+  const { theme, siteConfig } = config;
+  const { cta } = siteConfig; // Look inside siteConfig
+  
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <section className="py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         
-        {/* Main Card Wrapper */}
         <div 
           style={{ 
-            backgroundColor: theme.secondaryColor, // Usually the dark Slate-950
+            backgroundColor: theme.secondaryColor, 
             borderRadius: theme.borderRadius 
           }}
           className="relative overflow-hidden p-12 md:p-24 text-center shadow-2xl"
         >
           
-          {/* AMBIENT GLOWS: Using primaryColor for the main glow */}
+          {/* AMBIENT GLOWS */}
           <div 
             style={{ backgroundColor: theme.primaryColor }}
             className="absolute top-0 left-0 w-64 h-64 opacity-20 blur-[100px] -translate-x-1/2 -translate-y-1/2"
           ></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 blur-[120px] translate-x-1/3 translate-y-1/3"></div>
 
           <div className="relative z-10 max-w-3xl mx-auto">
             {/* Top Tagline */}
@@ -70,7 +84,7 @@ const CTA01: React.FC<CTAProps> = ({ config }) => {
                 onMouseLeave={() => setIsHovered(false)}
                 style={{ 
                   backgroundColor: theme.primaryColor,
-                  borderRadius: '9999px', // Rounded-full for CTA
+                  borderRadius: '9999px',
                   transform: isHovered ? 'scale(1.05)' : 'scale(1)',
                   boxShadow: isHovered ? `0 0 40px ${theme.primaryColor}66` : 'none',
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
@@ -91,7 +105,6 @@ const CTA01: React.FC<CTAProps> = ({ config }) => {
             </div>
           </div>
 
-          {/* Bottom Accent Line */}
           <div 
             style={{ background: `linear-gradient(to right, transparent, ${theme.primaryColor}80, transparent)` }}
             className="absolute bottom-0 left-0 right-0 h-[1px]"

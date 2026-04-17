@@ -1,35 +1,44 @@
 import React, { useState } from 'react';
 
-interface FeatureRow {
-  tag: string;
-  title: string;
-  highlight: string;
-  desc: string;
-  imageUrl: string;
-  list?: string[];
-  cta?: string;
-}
-
-interface Features02Props {
+interface FeaturesProps {
   config: {
-    theme: {
-      primaryColor: string;
-      secondaryColor: string;
-      borderRadius: string;
+    theme: { primaryColor: string; borderRadius: string; secondaryColor?: string; };
+    siteConfig: {
+      features: {
+        tag?: string;
+        topTitle: string;
+        mainTitle: string;
+        highlightWord?: string;
+        items: Array<{
+          title: string;
+          desc: string;
+          image?: string; // Standardized (replaces 'img' or 'imageUrl')
+          icon?: string;
+          tag?: string;
+          highlight?: string; // Standardized from row.highlight
+          list?: string[];    // Standardized from row.list
+          cta?: string;
+          imageUrl?: string;
+          dark?: boolean; // Specific to Features04
+          step?: string; // Specific to Features04
+        }>;
+      };
     };
-    featureRows: FeatureRow[];
   };
 }
 
-const Features02: React.FC<Features02Props> = ({ config }) => {
-  const { theme, featureRows } = config;
+const Features02: React.FC<FeaturesProps> = ({ config }) => {
+  const { theme, siteConfig } = config;
+  const { features } = siteConfig;
+  const { items } = features; // 'items' replaces 'featureRows'
+
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
       {/* Container Lane */}
       <div className="max-w-7xl mx-auto space-y-32">
-        {featureRows.map((row, idx) => {
+        {items.map((row, idx) => {
           // Use index to alternate layout: even = image right, odd = image left
           const isReversed = idx % 2 !== 0;
 

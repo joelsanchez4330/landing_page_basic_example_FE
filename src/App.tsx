@@ -21,7 +21,7 @@ export default function App() {
       {/* @REPLACE_COMPONENT_CTA */}
       
       {/* @REPLACE_COMPONENT_FOOTER */}
-
+      
     </div>
   );
 }

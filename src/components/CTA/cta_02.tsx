@@ -1,25 +1,40 @@
 import React from 'react';
 
-interface FooterProps {
+interface CTAProps {
   config: {
-    theme: {
-      primaryColor: string;
-      secondaryColor: string;
+    theme: { 
+      primaryColor: string; 
+      secondaryColor: string; 
+      borderRadius: string;
+      fontFamily?: string; 
     };
-    impactFooter: {
-      tag: string;
-      line1: string;
-      line1Highlight: string;
-      line2: string;
-      line2Highlight: string;
-      buttonText: string;
-      socials: { label: string; url: string }[];
+    siteConfig: {
+      cta: {
+        // --- Shared / Standard CTA 01 Fields ---
+        topTitle?: string;
+        mainTitle?: string;
+        highlight?: string;
+        subtitle?: string;
+        primaryBtn?: string;
+        secondaryBtn?: string;
+
+        // --- CTA 02 Specific Fields ---
+        tag?: string;
+        line1?: string;
+        line1Highlight?: string;
+        line2?: string;
+        line2Highlight?: string;
+        buttonText?: string;
+        socials?: Array<{ label: string; url: string }>;
+      };
     };
   };
 }
 
-const Cta02: React.FC<FooterProps> = ({ config }) => {
-  const { theme, impactFooter: data } = config;
+const Cta02: React.FC<CTAProps> = ({ config }) => {
+  // UNIVERSAL MAPPING
+  const { theme, siteConfig } = config;
+  const { cta: data } = siteConfig; 
 
   return (
     <section className="py-32 px-6 overflow-hidden bg-white">
@@ -53,7 +68,7 @@ const Cta02: React.FC<FooterProps> = ({ config }) => {
           </p>
         </div>
 
-        {/* BUTTON WITH DYNAMIC GLOW */}
+        {/* BUTTON */}
         <div className="relative group">
           <div 
             style={{ backgroundColor: theme.primaryColor }}
@@ -69,9 +84,9 @@ const Cta02: React.FC<FooterProps> = ({ config }) => {
           </a>
         </div>
 
-        {/* SOCIAL LINKS */}
+        {/* SOCIAL LINKS - Standardized from the CTA data */}
         <div className="mt-24 flex flex-wrap justify-center gap-8 text-xs font-bold uppercase tracking-widest text-gray-400">
-          {data.socials.map((link, idx) => (
+          {data.socials?.map((link, idx) => (
             <a 
               key={idx} 
               href={link.url}
@@ -83,7 +98,6 @@ const Cta02: React.FC<FooterProps> = ({ config }) => {
             </a>
           ))}
         </div>
-        
       </div>
     </section>
   );

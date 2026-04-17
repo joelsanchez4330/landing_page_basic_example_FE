@@ -1,35 +1,49 @@
 import React from 'react';
+import * as LucideIcons from 'lucide-react';
 
 interface FeaturesProps {
   config: {
-    theme: {
-      primaryColor: string;
-      borderRadius: string;
-    };
-    features: {
-      topTitle: string;
-      mainTitle: string;
-      items: Array<{
-        title: string;
-        desc: string;
-        icon: string;
-      }>;
+    theme: { primaryColor: string; borderRadius: string; secondaryColor?: string; };
+    siteConfig: {
+      features: {
+        tag?: string;
+        topTitle: string;
+        mainTitle: string;
+        highlightWord?: string;
+        items: Array<{
+          title: string;
+          desc: string;
+          image?: string; // Standardized (replaces 'img' or 'imageUrl')
+          icon?: string;
+          tag?: string;
+          highlight?: string; // Standardized from row.highlight
+          list?: string[];    // Standardized from row.list
+          cta?: string;
+          imageUrl?: string;
+          dark?: boolean; // Specific to Features04
+          step?: string; // Specific to Features04
+        }>;
+      };
     };
   };
 }
 
 const Features01: React.FC<FeaturesProps> = ({ config }) => {
-  const { theme, features } = config;
+  const { theme, siteConfig } = config;
+  const features = siteConfig?.features;
 
   // Helper to render the correct SVG based on the icon name in JSON
   const renderIcon = (iconName: string) => {
-    const props = { className: "w-6 h-6 transition-colors duration-300" };
-    switch (iconName) {
-      case 'bolt': return <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>;
-      case 'lock': return <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>;
-      case 'chart': return <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>;
-      default: return null;
+    // 1. Look up the icon in the library
+    const IconComponent = (LucideIcons as any)[iconName];
+  
+    // 2. If it exists, return the component. If not, return a default.
+    if (IconComponent) {
+      return <IconComponent size={24} color={theme.primaryColor} />;
     }
+    
+    // Optional: Fallback icon so the box isn't empty
+    return <LucideIcons.HelpCircle size={24} />;
   };
 
   return (

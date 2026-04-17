@@ -1,31 +1,29 @@
 import React from 'react';
 
-interface Project {
-  category: string;
-  title: string;
-  img: string;
-  aspect: string;
-  color: string;
-}
-
-interface PortfolioProps {
+interface GalleryProps {
   config: {
-    theme: {
-      primaryColor: string;
-      borderRadius: string;
-    };
-    portfolio: {
-      tag: string;
-      title: string;
-      highlight: string;
-      categories: string[];
-      projects: Project[];
+    theme: { primaryColor: string; borderRadius: string; };
+    siteConfig: {
+      gallery: {
+        tag: string;
+        title: string;
+        highlight: string;
+        categories: string[];
+        items: Array<{ // Standardized (replaces 'projects' or 'images')
+          title?: string;
+          category?: string;
+          url: string;        // Replaces 'img'
+          aspect: string;     // e.g., 'aspect-square' or 'aspect-video'
+          overlayColor: string; // Replaces 'color'
+        }>;
+      };
     };
   };
 }
 
-const Gallery01: React.FC<PortfolioProps> = ({ config }) => {
-  const { theme, portfolio: data } = config;
+const Gallery01: React.FC<GalleryProps> = ({ config }) => {
+  const { theme, siteConfig } = config;
+  const data = siteConfig.gallery;
 
   return (
     <section className="bg-white py-24 px-6 md:px-12 lg:px-24">
@@ -45,7 +43,7 @@ const Gallery01: React.FC<PortfolioProps> = ({ config }) => {
 
         {/* CATEGORY FILTERS */}
         <div className="flex flex-wrap gap-3">
-          {data.categories.map((cat, i) => (
+          {data.categories?.map((cat, i) => (
             <button 
               key={i}
               className="px-6 py-2 rounded-full border border-gray-200 font-bold text-sm hover:bg-black hover:text-white transition-all duration-300"
@@ -56,30 +54,30 @@ const Gallery01: React.FC<PortfolioProps> = ({ config }) => {
         </div>
       </header>
 
-      {/* MASONRY GRID */}
+      {/* MASONRY GRID - Now using 'items' */}
       <div className="max-w-[1400px] mx-auto columns-1 md:columns-2 lg:columns-3 gap-8">
-        {data.projects.map((project, idx) => (
+        {data.items.map((item, idx) => (
           <div key={idx} className="break-inside-avoid mb-8">
             <div 
               style={{ borderRadius: theme.borderRadius }}
-              className={`group relative overflow-hidden bg-gray-100 ${project.aspect} shadow-sm hover:shadow-2xl transition-all duration-500`}
+              className={`group relative overflow-hidden bg-gray-100 ${item.aspect} shadow-sm hover:shadow-2xl transition-all duration-500`}
             >
               <img 
-                src={`${project.img}?auto=format&fit=crop&w=800&q=80`} 
-                alt={project.title}
+                src={`${item.url}?auto=format&fit=crop&w=800&q=80`} 
+                alt={item.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               
               {/* HOVER OVERLAY */}
               <div 
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 text-white"
-                style={{ backgroundColor: `${project.color}E6` }} // E6 = 90% opacity hex
+                style={{ backgroundColor: `${item.overlayColor}E6` }} // E6 = 90% opacity hex
               >
                 <span className="text-xs font-bold uppercase tracking-widest mb-1">
-                  {project.category}
+                  {item.category}
                 </span>
                 <h3 className="text-2xl font-black">
-                  {project.title}
+                  {item.title}
                 </h3>
               </div>
             </div>

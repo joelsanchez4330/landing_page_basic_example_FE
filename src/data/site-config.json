@@ -1,226 +1,140 @@
 {
     "theme": {
-    "primaryColor": "#f97316", 
-    "secondaryColor": "#0f172a",
-    "fontFamily": "Inter, sans-serif",
-    "borderRadius": "1rem"
-  },
-  "company": {
-    "name": "Acme Agency",
-    "logoUrl": "https://via.placeholder.com/150x50"
-  },
-  "hero": {
-    "title": "Revolutionize Your Daily Workflow.",
-    "highlightWord": "Workflow",
-    "subtitle": "Our platform simplifies complex tasks and enhances productivity instantly.",
-    "cta01Text": "Get Started for Free",
-    "cta02Text": "Request a Demo",
-    "imageUrl": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2670",
-    "gallery": [
-        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2670",
-        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670",
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2670",
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2670"
-        ],
-    "sizes": {
-      "titleFont": "50px",
-      "subtitleFont": "20px",
-      "buttonPadding": "16px 32px",
-      "buttonFontSize": "12px",
-      "imageHeight": "450px",
-      "imageMaxWidth": "500px"
-        }
+      "primaryColor": "#4B6344",
+      "secondaryColor": "#A8C69F",
+      "neutralBg": "#F9FAFB",
+      "textColor": "#111827",
+      "fontFamily": "'Playfair Display', serif",
+      "borderRadius": "24px"
     },
-    "features": {
-        "topTitle": "Core Capabilities",
-        "mainTitle": "Everything you need to scale your digital agency.",
+    "company": {
+      "name": "Zenith Yoga Studio",
+      "logoUrl": "GH"
+    },
+    "siteConfig": {
+      "hero": {
+        "title": "Find Your Inner Peace with Yoga",
+        "highlightWord": "Peace",
+        "subtitle": "Join us for a journey of mindfulness. New members get a 15% discount on their first trial month!",
+        "cta01Text": "Book Trial Class",
+        "cta02Text": "View Schedule",
+        "imageUrl": "https://images.unsplash.com/photo-1664464683525-29b5d442af54?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "sizes": {
+          "titleFont": "56px",
+          "subtitleFont": "20px",
+          "buttonPadding": "14px 28px",
+          "buttonFontSize": "16px",
+          "imageHeight": "600px",
+          "imageMaxWidth": "100%"
+        }
+      },
+      "features": {
+        "tag": "EXPERIENCE",
+        "topTitle": "Why Zenith?",
+        "mainTitle": "Your Journey to Wellness",
+        "highlightWord": "Wellness",
         "items": [
-            {
-            "title": "Lightning Fast",
-            "desc": "Optimized for speed. Our infrastructure ensures your pages load in under 200ms globally.",
-            "icon": "bolt"
-            },
-            {
-            "title": "Secure by Design",
-            "desc": "Enterprise-grade encryption and automated security patches keep your data safe 24/7.",
-            "icon": "lock"
-            },
-            {
-            "title": "Smart Analytics",
-            "desc": "Real-time insights into user behavior so you can make data-driven decisions instantly.",
-            "icon": "chart"
-            }
+          {
+            "title": "Organic Flow",
+            "desc": "Move with breath in our airy, plant-filled studio space.",
+            "image": "https://example.com/feature1.jpg",
+            "icon": "Leaf",
+            "tag": "Classes"
+          },
+          {
+            "title": "Expert Guidance",
+            "desc": "Our instructors lead with compassion and deep anatomical knowledge.",
+            "image": "https://example.com/feature2.jpg",
+            "icon": "User",
+            "tag": "Instruction",
+            "list": ["Hatha", "Vinyasa", "Yin"]
+          }
         ]
-    },
-    "featureRows": [
-        {
-            "tag": "Automation",
-            "title": "Work less, achieve more.",
-            "highlight": "achieve more.",
-            "desc": "Our intelligent engine handles repetitive tasks, freeing your team for strategy.",
-            "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426",
-            "list": ["Automated File Naming", "Instant Cloud Sync"]
-        },
-        {
-            "tag": "Analytics",
-            "title": "Data that tells a story.",
-            "highlight": "tells a story.",
-            "desc": "Don't just look at numbers. Get actionable insights that show where users drop off.",
-            "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670",
-            "cta": "View Live Demo"
-        }
-    ],
-    "bento": {
-        "tag": "Capabilities",
-        "title": "Supercharge your creative production.",
-        "highlight": "creative production.",
-        "card1": {
-            "title": "Collaborative Whiteboard",
-            "desc": "Brainstorm, wireframe, and iterate in real-time with your entire team.",
-            "img": "https://images.unsplash.com/photo-1542744094-24638eff58bb?q=80&w=2671"
-        },
-        "card2": {
-            "title": "Cloud Sync",
-            "desc": "Your assets are always where you need them, instantly synced."
-        }
-    },
-    "stickySteps": [
-        {
-            "step": "Step 01",
-            "title": "Smart Asset Ingestion.",
-            "highlight": "Ingestion",
-            "desc": "Drag and drop any file format. Our AI automatically categorizes and tags your media.",
-            "img": "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1000",
-            "dark": false
-        },
-        {
-            "step": "Step 02",
-            "title": "Real-time Collaboration.",
-            "highlight": "Collaboration",
-            "desc": "Invite your team and clients. Leave comments directly on the canvas live.",
-            "img": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000",
-            "dark": true
-        },{
-            "step": "Step 03",
-            "title": "Real-time CollaborationXX.",
-            "highlight": "Collaboration",
-            "desc": "Invite your team and clients. Leave comments directly on the canvas live.",
-            "img": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000",
-            "dark": false
-        }
-    ],
-    "featureCards": {
-        "tag": "Features",
-        "title": "Everything you need, nothing you don't.",
-        "highlight": "nothing you don't.",
+      },
+      "gallery": {
+        "tag": "COLLECTION",
+        "title": "Our Sanctuary",
+        "highlight": "Sanctuary",
+        "categories": ["Studio", "Events", "Community"],
         "items": [
-            {
-            "title": "Strategic Planning",
-            "desc": "Align your team's vision with actionable roadmaps and real-time milestone tracking.",
-            "img": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2670",
-            "linkText": "Learn More"
-            },
-            {
-            "title": "Interface Design",
-            "desc": "Build stunning, accessible user interfaces that convert visitors into lifelong customers.",
-            "img": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2670",
-            "linkText": "Explore UX"
-            },
-            {
-            "title": "Data Analytics",
-            "desc": "Make data-driven decisions with built-in heatmaps and user flow visualizations.",
-            "img": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670",
-            "linkText": "View Stats"
-            }
+          {
+            "title": "Main Hall",
+            "category": "Studio",
+            "url": "https://plus.unsplash.com/premium_photo-1661964030420-15481be20d5f?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "aspect": "aspect-square",
+            "overlayColor": "#A8C69F"
+          },
+          {
+            "title": "Sunset Session",
+            "category": "Events",
+            "url": "https://images.unsplash.com/photo-1559209537-dafe2fe2886b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "aspect": "aspect-video",
+            "overlayColor": "#F8F9F7"
+          },
+          {
+            "title": "Main Hall",
+            "category": "Studio",
+            "url": "https://images.unsplash.com/photo-1656646424651-95b048b70b1b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "aspect": "aspect-square",
+            "overlayColor": "#A8C69F"
+          },
+          {
+            "title": "Sunset Session",
+            "category": "Events",
+            "url": "https://images.unsplash.com/photo-1630659508975-00941de4d982?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "aspect": "aspect-video",
+            "overlayColor": "#F8F9F7"
+          }
         ]
-    },
-    "portfolio": {
-        "tag": "Portfolio",
-        "title": "Selected",
-        "highlight": "Works.",
-        "categories": ["All Projects", "Branding", "Development"],
-        "projects": [
-        { "category": "Development", "title": "Code Systems", "img": "https://images.unsplash.com/photo-1498050108023-c5249f4df085", "aspect": "aspect-video", "color": "#f97316" },
-        { "category": "Product", "title": "Interface Study", "img": "https://images.unsplash.com/photo-1775664352285-321b99a86ab8", "aspect": "aspect-[3/4]", "color": "#000000" },
-        { "category": "Analytics", "title": "Data Viz", "img": "https://images.unsplash.com/photo-1551288049-bebda4e38f71", "aspect": "aspect-square", "color": "#2563eb" },
-        { "category": "Design", "title": "Abstract Form", "img": "https://images.unsplash.com/photo-1523726491678-bf852e717f6a", "aspect": "aspect-[2/3]", "color": "#9333ea" },
-        { "category": "Editorial", "title": "Minimalist", "img": "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85", "aspect": "aspect-video", "color": "#16a34a" },
-        { "category": "Social", "title": "Campaigns", "img": "https://images.unsplash.com/photo-1773243086631-962baefccd8a", "aspect": "aspect-square", "color": "#ec4899" }
-        ]
-    },
-    "cardStack": {
-        "tag": "The Collection",
-        "title": "Touch to",
-        "highlight": "Expand.",
-        "images": [
-        "https://images.unsplash.com/photo-1761839259112-aaea03db3633",
-        "https://images.unsplash.com/photo-1558655146-d09347e92766",
-        "https://images.unsplash.com/photo-1523726491678-bf852e717f6a",
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
-        ],
-        "hint": "Hover the stack to explore"
-    },
-    "cta": {
-        "topTitle": "Ready to scale?", 
-        "mainTitle": "Let’s build something",
-        "highlight": "legendary.",
-        "subtitle": "Join 200+ global brands already using our high-performance workflow to dominate their industry.",
-        "primaryBtn": "Start Your Project",
-        "secondaryBtn": "Book a Strategy Call"
-    },
-    "impactFooter": {
-        "tag": "Next Step",
-        "line1": "Build",
-        "line1Highlight": "Better",
-        "line2": "Ship",
-        "line2Highlight": "Faster.",
-        "buttonText": "Talk to a Specialist",
+      },
+      "cta": {
+        "topTitle": "READY TO BEGIN?",
+        "mainTitle": "Start Your Transformation Today",
+        "highlight": "Transformation",
+        "subtitle": "Claim your 15% new member discount and book your first mat today.",
+        "primaryBtn": "Get Started Now",
+        "secondaryBtn": "Contact Us",
+        "tag": "GET STARTED",
+        "line1": "Begin Your Journey",
+        "line1Highlight": "Journey",
+        "line2": "Find Your Inner Peace",
+        "line2Highlight": "Peace",
+        "buttonText": "Join the Sanctuary",
         "socials": [
-            { "label": "Instagram", "url": "#" },
-            { "label": "LinkedIn", "url": "#" },
-            { "label": "Dribbble", "url": "#" }
-            ]
-    },
-    "footer": {
-        "companyDesc": "Building digital experiences that outpace the status quo. Let’s create something future-proof.",
-        "ghostText": "GEMINI",
+          { "label": "Instagram", "url": "https://instagram.com/zenith" },
+          { "label": "WhatsApp", "url": "https://wa.me/yournumber" }
+        ]
+      },
+      "footer": {
+        "socials": [
+          { "label": "Instagram", "url": "https://instagram.com/zenithyoga" },
+          { "label": "Facebook", "url": "https://facebook.com/zenithyoga" },
+          { "label": "Twitter", "url": "https://twitter.com/zenithyoga" }
+        ],
+        "companyDesc": "A peaceful sanctuary for organic movement and mindfulness in the heart of the city.",
+        "ghostText": "ZENITH",
         "columns": [
-        {
+          {
             "title": "Explore",
             "links": [
-            { "label": "Our Work", "url": "#" },
-            { "label": "Capabilities", "url": "#" },
-            { "label": "Process", "url": "#" }
+              { "label": "Schedule", "url": "/schedule" },
+              { "label": "Pricing", "url": "/pricing", "italic": true },
+              { "label": "Our Teachers", "url": "/teachers" }
             ]
-        },
-        {
-            "title": "Agency",
+          },
+          {
+            "title": "Support",
             "links": [
-            { "label": "About Us", "url": "#" },
-            { "label": "Careers", "url": "#" },
-            { "label": "Journal", "url": "#" }
+              { "label": "FAQ", "url": "/faq" },
+              { "label": "Contact", "url": "/contact" }
             ]
-        },
-        {
-            "title": "Contact",
-            "links": [
-            { "label": "hello@agency.com", "url": "mailto:hello@agency.com", "italic": true },
-            { "label": "Book a Call", "url": "#" }
-            ]
-        }
+          }
         ],
-        "socials": ["𝕏", "IG", "LI"]
-    },
-    "newsletter": {
-        "title": "Get the",
-        "highlight": "Agency Edge.",
-        "subtitle": "Weekly insights on design, tech, and strategy delivered to your inbox.",
-        "placeholder": "Your email address",
-        "buttonText": "Join 5k+ Readers",
-        "socials": [
-        { "label": "LinkedIn", "url": "#" },
-        { "label": "Instagram", "url": "#" },
-        { "label": "Twitter", "url": "#" }
-        ]
+        "title": "Join the Sanctuary",
+        "highlight": "Sanctuary",
+        "subtitle": "Subscribe to our newsletter for 15% off your first class and weekly mindfulness tips.",
+        "placeholder": "Enter your email address",
+        "buttonText": "Subscribe Now"
+      }
     }
   }
