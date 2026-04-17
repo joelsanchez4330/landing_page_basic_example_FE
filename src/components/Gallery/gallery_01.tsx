@@ -5,16 +5,16 @@ interface GalleryProps {
     theme: { primaryColor: string; borderRadius: string; };
     siteConfig: {
       gallery: {
-        tag: string;
-        title: string;
-        highlight: string;
-        categories: string[];
-        items: Array<{ // Standardized (replaces 'projects' or 'images')
-          title?: string;
-          category?: string;
-          url: string;        // Replaces 'img'
-          aspect: string;     // e.g., 'aspect-square' or 'aspect-video'
-          overlayColor: string; // Replaces 'color'
+        tag?: string;
+        title?: string;
+        highlight?: string;
+        categories?: string[];
+        items: Array<{ 
+          url: string; 
+          aspect?: string; 
+          overlayColor?: string; 
+          title?: string; 
+          category?: string; 
         }>;
       };
     };

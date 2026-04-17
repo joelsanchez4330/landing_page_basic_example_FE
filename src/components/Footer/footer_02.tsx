@@ -11,7 +11,7 @@ interface FooterProps {
     siteConfig: {
       footer: {
         // Shared fields
-        socials: Array<{ label: string; url: string }>;
+        socials?: Array<{ label: string; url: string }>;
         
         // Footer 01 Specific (Optional)
         companyDesc?: string;
