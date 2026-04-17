@@ -15,7 +15,7 @@ interface FeaturesProps {
           image?: string; 
           icon?: string;
           tag?: string;
-          highlight?: string; // This is optional
+          highlight?: string; 
           list?: string[];    
           cta?: string;
           imageUrl?: string;
@@ -30,11 +30,13 @@ interface FeaturesProps {
 const features_02: React.FC<FeaturesProps> = ({ config }) => {
   const { theme, siteConfig } = config;
   
-  // FIX: Safety check for features and items
+  // SAFE EXTRACTION
   const features = siteConfig?.features;
   const items = features?.items ?? []; 
 
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
+  if (!features) return null;
 
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
@@ -42,10 +44,9 @@ const features_02: React.FC<FeaturesProps> = ({ config }) => {
         {items.map((row, idx) => {
           const isReversed = idx % 2 !== 0;
 
-          // FIX: Handle the split safely. 
-          // We provide fallback strings "" so split never sees 'undefined'
-          const titleText = row.title ?? "";
-          const highlightText = row.highlight ?? "";
+          // SAFE SPLIT: Ensuring these are always strings
+          const titleText = row?.title ?? "";
+          const highlightText = row?.highlight ?? "";
           const titleParts = titleText.split(highlightText);
 
           return (
@@ -62,31 +63,30 @@ const features_02: React.FC<FeaturesProps> = ({ config }) => {
                   }}
                   className="inline-flex px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest"
                 >
-                  {row.tag || "Feature"}
+                  {row?.tag ?? "Feature"}
                 </div>
                 
                 <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight text-slate-950">
-                  {/* FIX: Use the parts we safely split above */}
                   {titleParts[0]}
                   <span style={{ color: theme.primaryColor }}>{highlightText}</span>
                   {titleParts[1]}
                 </h2>
                 
                 <p className="text-lg text-slate-600 leading-relaxed max-w-lg">
-                  {row.desc}
+                  {row?.desc ?? ""}
                 </p>
 
-                {row.list && (
+                {row?.list && (
                   <ul className="space-y-3">
-                    {row.list.map((item, i) => (
+                    {(row.list ?? []).map((item, i) => (
                       <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
-                        <span style={{ color: theme.primaryColor }}>✓</span> {item}
+                        <span style={{ color: theme.primaryColor }}>✓</span> {item ?? ""}
                       </li>
                     ))}
                   </ul>
                 )}
 
-                {row.cta && (
+                {row?.cta && (
                   <button 
                     onMouseEnter={() => setHoveredIdx(idx)}
                     onMouseLeave={() => setHoveredIdx(null)}
@@ -108,10 +108,10 @@ const features_02: React.FC<FeaturesProps> = ({ config }) => {
                 style={{ backgroundColor: isReversed ? '#eff6ff' : '#f8fafc' }}
               >
                 <img 
-                  src={row.imageUrl || row.image} 
-                  alt={row.tag || "feature image"} 
+                  src={row?.imageUrl || row?.image || "https://images.unsplash.com/photo-1497366216548-37526070297c"} 
+                  alt={row?.tag || "feature image"} 
                   style={{ borderRadius: theme.borderRadius }}
-                  className="shadow-2xl border border-white w-full object-cover"
+                  className="shadow-2xl border border-white w-full object-cover max-h-[500px]"
                 />
               </div>
             </div>
